@@ -31,7 +31,7 @@ END $$;
 
 -- 3. PROFILES TABLE (Mirrors Supabase Auth Users)
 CREATE TABLE IF NOT EXISTS public.profiles (
-    id UUID PRIMARY KEY REFERENCES auth.users(id) ON DELETE CASCADE,
+    id UUID PRIMARY KEY,
     email TEXT NOT NULL UNIQUE,
     full_name TEXT NOT NULL,
     phone TEXT NOT NULL,
@@ -41,6 +41,28 @@ CREATE TABLE IF NOT EXISTS public.profiles (
     created_at TIMESTAMPTZ DEFAULT NOW() NOT NULL,
     updated_at TIMESTAMPTZ DEFAULT NOW() NOT NULL
 );
+
+-- Trigger to sync new Supabase Auth users automatically into public.profiles
+CREATE OR REPLACE FUNCTION public.handle_new_user()
+RETURNS trigger AS $$
+BEGIN
+  INSERT INTO public.profiles (id, email, full_name, phone, role)
+  VALUES (
+    new.id,
+    new.email,
+    COALESCE(new.raw_user_meta_data->>'full_name', split_part(new.email, '@', 1)),
+    COALESCE(new.raw_user_meta_data->>'phone', ''),
+    COALESCE((new.raw_user_meta_data->>'role')::user_role, 'user'::user_role)
+  )
+  ON CONFLICT (id) DO NOTHING;
+  RETURN new;
+END;
+$$ LANGUAGE plpgsql SECURITY DEFINER;
+
+DROP TRIGGER IF EXISTS on_auth_user_created ON auth.users;
+CREATE TRIGGER on_auth_user_created
+  AFTER INSERT ON auth.users
+  FOR EACH ROW EXECUTE FUNCTION public.handle_new_user();
 
 -- 4. DONORS TABLE (Detailed donor attributes & privacy settings)
 CREATE TABLE IF NOT EXISTS public.donors (

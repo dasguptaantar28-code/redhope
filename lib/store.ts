@@ -86,7 +86,7 @@ const INITIAL_PROFILES: Profile[] = [
     updated_at: "2026-04-18T16:45:00Z",
   },
   {
-    id: "u0000000-0000-0000-0000-000000000007",
+    id: "00000000-0000-0000-0000-000000000007",
     email: "user.tarek@example.com",
     full_name: "Tarek Rahman",
     phone: "+8801717000007",
@@ -203,8 +203,8 @@ const INITIAL_DONORS: Donor[] = [
 
 const INITIAL_BLOOD_REQUESTS: BloodRequest[] = [
   {
-    id: "r0000000-0000-0000-0000-000000000001",
-    user_id: "u0000000-0000-0000-0000-000000000007",
+    id: "c0000000-0000-0000-0000-000000000001",
+    user_id: "00000000-0000-0000-0000-000000000007",
     patient_name: "Begum Rahima (62)",
     blood_group: "O+",
     bags_needed: 2,
@@ -226,8 +226,8 @@ const INITIAL_BLOOD_REQUESTS: BloodRequest[] = [
     updated_at: "2026-11-08T06:00:00Z",
   },
   {
-    id: "r0000000-0000-0000-0000-000000000002",
-    user_id: "u0000000-0000-0000-0000-000000000007",
+    id: "c0000000-0000-0000-0000-000000000002",
+    user_id: "00000000-0000-0000-0000-000000000007",
     patient_name: "Master Arian (7)",
     blood_group: "A+",
     bags_needed: 1,
@@ -249,8 +249,8 @@ const INITIAL_BLOOD_REQUESTS: BloodRequest[] = [
     updated_at: "2026-11-08T07:15:00Z",
   },
   {
-    id: "r0000000-0000-0000-0000-000000000003",
-    user_id: "u0000000-0000-0000-0000-000000000007",
+    id: "c0000000-0000-0000-0000-000000000003",
+    user_id: "00000000-0000-0000-0000-000000000007",
     patient_name: "Shamsul Haque (45)",
     blood_group: "B-",
     bags_needed: 2,
@@ -272,8 +272,8 @@ const INITIAL_BLOOD_REQUESTS: BloodRequest[] = [
     updated_at: "2026-11-08T08:00:00Z",
   },
   {
-    id: "r0000000-0000-0000-0000-000000000004",
-    user_id: "u0000000-0000-0000-0000-000000000007",
+    id: "c0000000-0000-0000-0000-000000000004",
+    user_id: "00000000-0000-0000-0000-000000000007",
     patient_name: "Rubel Mia (28)",
     blood_group: "AB+",
     bags_needed: 1,
@@ -340,17 +340,17 @@ const INITIAL_NOTIFICATIONS: InAppNotification[] = [
     title: "Urgent O+ Blood Needed in Dhaka!",
     message: "A verified emergency request at Dhaka Medical College Hospital matches your blood group and district.",
     type: "request_match",
-    link: "/blood-requests/r0000000-0000-0000-0000-000000000001",
+    link: "/blood-requests/c0000000-0000-0000-0000-000000000001",
     is_read: false,
     created_at: "2026-11-08T06:05:00Z",
   },
   {
     id: "notif-002",
-    user_id: "u0000000-0000-0000-0000-000000000007",
+    user_id: "00000000-0000-0000-0000-000000000007",
     title: "Blood Request Verified",
     message: "Your blood request for Begum Rahima has been verified by Dr. Mahmud Hasan.",
     type: "request_verified",
-    link: "/blood-requests/r0000000-0000-0000-0000-000000000001",
+    link: "/blood-requests/c0000000-0000-0000-0000-000000000001",
     is_read: false,
     created_at: "2026-11-08T06:01:00Z",
   },
@@ -418,7 +418,7 @@ During severe dengue outbreaks in Dhaka and Chattogram, platelet counts can prec
 
 const INITIAL_KNOWLEDGE_ARTICLES: KnowledgeArticle[] = [
   {
-    id: "k0000000-0000-0000-0000-000000000001",
+    id: "f0000000-0000-0000-0000-000000000001",
     title: "Who Can Donate Blood? Essential Eligibility Guidelines",
     slug: "who-can-donate-blood",
     category: "Eligibility",
@@ -442,7 +442,7 @@ In Bangladesh and globally under WHO guidelines, blood donation is safe and life
     created_at: "2026-10-15T08:00:00Z",
   },
   {
-    id: "k0000000-0000-0000-0000-000000000002",
+    id: "f0000000-0000-0000-0000-000000000002",
     title: "Debunking Common Myths About Blood Donation in Bangladesh",
     slug: "common-blood-donation-myths",
     category: "Myths & Facts",
@@ -460,7 +460,7 @@ In Bangladesh and globally under WHO guidelines, blood donation is safe and life
     created_at: "2026-10-16T08:00:00Z",
   },
   {
-    id: "k0000000-0000-0000-0000-000000000003",
+    id: "f0000000-0000-0000-0000-000000000003",
     title: "How to Prepare Before and After Blood Donation",
     slug: "preparation-and-aftercare",
     category: "Health Tips",
@@ -481,7 +481,7 @@ In Bangladesh and globally under WHO guidelines, blood donation is safe and life
     created_at: "2026-10-17T08:00:00Z",
   },
   {
-    id: "k0000000-0000-0000-0000-000000000004",
+    id: "f0000000-0000-0000-0000-000000000004",
     title: "Blood Group Compatibility: The Science of Giving and Receiving",
     slug: "blood-group-compatibility",
     category: "Blood Science",
@@ -502,7 +502,7 @@ In Bangladesh and globally under WHO guidelines, blood donation is safe and life
 
 const INITIAL_TESTIMONIALS: Testimonial[] = [
   {
-    id: "t0000000-0000-0000-0000-000000000001",
+    id: "b0000000-0000-0000-0000-000000000011",
     name: "Farhana Chowdhury",
     role: "Patient Family, Dhaka",
     photo_url: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=120",
@@ -513,7 +513,7 @@ const INITIAL_TESTIMONIALS: Testimonial[] = [
     created_at: "2026-09-12T10:00:00Z",
   },
   {
-    id: "t0000000-0000-0000-0000-000000000002",
+    id: "b0000000-0000-0000-0000-000000000012",
     name: "Saiful Alam",
     role: "Regular Donor (14 Times)",
     photo_url: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=120",
@@ -524,7 +524,7 @@ const INITIAL_TESTIMONIALS: Testimonial[] = [
     created_at: "2026-09-20T14:00:00Z",
   },
   {
-    id: "t0000000-0000-0000-0000-000000000003",
+    id: "b0000000-0000-0000-0000-000000000013",
     name: "Dr. Anisur Rahman",
     role: "Physician, DMCH",
     photo_url: "https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=120",
@@ -543,7 +543,7 @@ const INITIAL_AUDIT_LOGS: AdminAuditLog[] = [
     admin_name: "Dr. Mahmud Hasan",
     action: "VERIFY_BLOOD_REQUEST",
     target_type: "blood_request",
-    target_id: "r0000000-0000-0000-0000-000000000001",
+    target_id: "c0000000-0000-0000-0000-000000000001",
     details: "Verified patient Begum Rahima at DMCH after contacting attending ward physician.",
     created_at: "2026-11-08T06:00:00Z",
   },
@@ -553,7 +553,7 @@ const INITIAL_AUDIT_LOGS: AdminAuditLog[] = [
     admin_name: "Dr. Mahmud Hasan",
     action: "VERIFY_BLOOD_REQUEST",
     target_type: "blood_request",
-    target_id: "r0000000-0000-0000-0000-000000000002",
+    target_id: "c0000000-0000-0000-0000-000000000002",
     details: "Verified thalassemia request for Master Arian at BSMMU.",
     created_at: "2026-11-08T07:15:00Z",
   },
